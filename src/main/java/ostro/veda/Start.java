@@ -66,23 +66,29 @@ public class Start {
     }
 
     private static void insertNumber() {
+        if (board == null) return;
         Integer[] input = getInput(true);
         board.insertNumber(input[0], input[1], input[2]);
     }
 
     private static void clearNumber() {
+        if (board == null) return;
         Integer[] input = getInput(false);
+        if (input == null) return;
         board.clearNumber(input[0], input[1]);
     }
 
     private static void resetBoard() {
+        if (board == null) return;
         board.resetBoard();
     }
 
     private static void printBoard() {
+        if (board == null) return;
 
         String[] array = new String[81];
         int index = 0;
+
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 Space space = board.getSpaces().get(i).get(j);
@@ -98,10 +104,12 @@ public class Start {
     }
 
     private static void checkBoard() {
+        if (board == null) return;
         System.out.println("Game: " + board.getStatus());
     }
 
     private static Integer[] getInput(boolean getValue) {
+        if (board == null) return null;
 
         System.out.println("Insert row number");
         String strRow = scanner.nextLine();
@@ -122,6 +130,7 @@ public class Start {
     }
 
     private static int getInputValue() {
+        if (board == null) return 1;
         System.out.println("Insert value number");
         String strValue = scanner.nextLine();
 

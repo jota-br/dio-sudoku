@@ -30,17 +30,15 @@ public class BoardImpl implements Board {
     }
 
     @Override
-    public boolean insertNumber(int row, int col, Integer value) {
-        if (spaces.get(row).get(col).isFixed()) return false;
+    public void insertNumber(int row, int col, Integer value) {
+        if (spaces.get(row).get(col).isFixed()) return;
         spaces.get(row).get(col).setInserted(value);
-        return true;
     }
 
     @Override
-    public boolean clearNumber(int row, int col) {
-        if (spaces == null) return false;
+    public void clearNumber(int row, int col) {
+        if (spaces == null) return;
         spaces.get(row).get(col).setInserted(null);
-        return true;
     }
 
     @Override

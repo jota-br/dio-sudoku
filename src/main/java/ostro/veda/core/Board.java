@@ -8,9 +8,9 @@ public interface Board {
 
     GameStatus getStatus();
 
-    boolean insertNumber(final int row, final int col, final Integer value);
+    void insertNumber(final int row, final int col, final Integer value);
 
-    boolean clearNumber(final int row, final int col);
+    void clearNumber(final int row, final int col);
 
     void resetBoard();
 }
